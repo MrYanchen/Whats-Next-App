@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2016 11:07:41 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.app.hibnate.Register" table="register" catalog="mywyc" optimistic-lock="version">
+        <id name="registerId" type="java.lang.Integer">
+            <column name="RegisterId" />
+            <generator class="identity" />
+        </id>
+        <property name="registerName" type="string">
+            <column name="RegisterName" length="45" />
+        </property>
+        <property name="registerPassword" type="string">
+            <column name="RegisterPassword" length="45" />
+        </property>
+        <property name="confirmPassword" type="string">
+            <column name="ConfirmPassword" length="45" />
+        </property>
+        <property name="registerPhone" type="string">
+            <column name="RegisterPhone" length="45" />
+        </property>
+        <property name="registerEmail" type="string">
+            <column name="RegisterEmail" length="45" />
+        </property>
+        <property name="registerLike" type="string">
+            <column name="RegisterLike" length="45" />
+        </property>
+        <property name="registerPhotoName" type="string">
+            <column name="RegisterPhotoName" />
+        </property>
+        <property name="registerPhotoFiletye" type="string">
+            <column name="RegisterPhotoFiletye" />
+        </property>
+        <property name="registerPhotoData" type="binary">
+            <column name="RegisterPhotoData" />
+        </property>
+        <property name="authority" type="string">
+            <column name="authority" length="45" />
+        </property>
+        <set name="items" table="item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="RegisterId" />
+            </key>
+            <one-to-many class="com.app.hibnate.Item" />
+        </set>
+    </class>
+</hibernate-mapping>

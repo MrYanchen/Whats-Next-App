@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2016 3:57:53 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.app.hibnate.Item" table="item" catalog="mywyc" optimistic-lock="version">
+        <id name="itemId" type="java.lang.Integer">
+            <column name="ItemId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="category" class="com.app.hibnate.Category" fetch="select">
+            <column name="CategoryId" />
+        </many-to-one>
+        <many-to-one name="recommendation" class="com.app.hibnate.Recommendation" fetch="select">
+            <column name="RecommondationId" />
+        </many-to-one>
+        <many-to-one name="register" class="com.app.hibnate.Register" fetch="select">
+            <column name="RegisterId" />
+        </many-to-one>
+        <property name="itemName" type="string">
+            <column name="ItemName" length="45" />
+        </property>
+        <property name="itemImageName" type="string">
+            <column name="ItemImageName" />
+        </property>
+        <property name="itemImageFiletye" type="string">
+            <column name="ItemImageFiletye" />
+        </property>
+        <property name="itemData" type="binary">
+            <column name="ItemData" />
+        </property>
+        <property name="itemLike" type="java.lang.Integer">
+            <column name="ItemLike" />
+        </property>
+        <set name="steps" table="step" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ItemId" not-null="true" />
+            </key>
+            <one-to-many class="com.app.hibnate.Step" />
+        </set>
+    </class>
+</hibernate-mapping>

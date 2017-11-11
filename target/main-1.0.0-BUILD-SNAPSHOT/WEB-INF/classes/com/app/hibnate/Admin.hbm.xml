@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2016 3:57:53 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.app.hibnate.Admin" table="admin" catalog="mywyc" optimistic-lock="version">
+        <id name="adminId" type="java.lang.Integer">
+            <column name="AdminId" />
+            <generator class="identity" />
+        </id>
+        <property name="adminName" type="string">
+            <column name="AdminName" length="45" />
+        </property>
+        <property name="adminPassword" type="java.lang.Integer">
+            <column name="AdminPassword" />
+        </property>
+        <property name="adminPhone" type="string">
+            <column name="AdminPhone" length="45" />
+        </property>
+        <property name="adminEmail" type="string">
+            <column name="AdminEmail" length="45" />
+        </property>
+        <property name="adminImageName" type="string">
+            <column name="AdminImageName" />
+        </property>
+        <property name="adminImageFiletye" type="string">
+            <column name="AdminImageFiletye" />
+        </property>
+        <property name="adminData" type="binary">
+            <column name="AdminData" />
+        </property>
+        <set name="recommendations" table="recommendation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="AdminId" />
+            </key>
+            <one-to-many class="com.app.hibnate.Recommendation" />
+        </set>
+    </class>
+</hibernate-mapping>

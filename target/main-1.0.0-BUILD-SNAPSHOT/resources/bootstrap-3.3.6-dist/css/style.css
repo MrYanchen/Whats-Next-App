@@ -1,0 +1,92 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent; 
+}
+
+#body_home_page {
+	background-image: url("images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+#body_register_page {
+	background-image: url("images/bg_register.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+#header_home_page {
+	top: 0px; 
+	width: 980px; 
+	height: 157px; 
+	position: absolute; 
+	left: 0px;
+}
+
+#home_page_nav {
+	background-color:rgba(255, 249, 255, 0.4);
+}
+
+.s0_bg {
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color:rgba(35, 35, 35, 0.6);  
+	border-top:0px solid rgba(47, 46, 46, 1);
+	border-bottom:0px solid rgba(47, 46, 46, 1);
+}
+
+#column {
+	right:0;
+	top:0;
+	bottom:0;
+	left:0;
+	
+	background-size: 100% 100%;
+	border-top:0px solid rgba(47, 46, 46, 1);
+	border-bottom:0px solid rgba(47, 46, 46, 1);
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+}
+
+#main_page {
+	background-color: rgba(35, 35, 35, 0.6);
+}
+
+#main_page_panel {
+	background-color: transparent;
+}
+
+.thumbnail > img {
+	height: 61.8%;
+}
+
+.thumbnail {
+	background-color: transparent;
+}
+
+#footer_main_page {
+	background-color:rgba(35, 35, 35, 0.6);  
+	border-top:0px solid rgba(47, 46, 46, 1);
+	border-bottom:0px solid rgba(47, 46, 46, 1);
+}

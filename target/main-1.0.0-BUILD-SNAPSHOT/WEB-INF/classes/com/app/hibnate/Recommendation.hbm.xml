@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2016 11:07:41 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.app.hibnate.Recommendation" table="recommendation" catalog="mywyc" optimistic-lock="version">
+        <id name="recommondationId" type="java.lang.Integer">
+            <column name="RecommondationId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="admin" class="com.app.hibnate.Admin" fetch="select">
+            <column name="AdminId" />
+        </many-to-one>
+        <property name="recommondationDate" type="string">
+            <column name="RecommondationDate" length="50" />
+        </property>
+        <set name="items" table="item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="RecommondationId" />
+            </key>
+            <one-to-many class="com.app.hibnate.Item" />
+        </set>
+    </class>
+</hibernate-mapping>

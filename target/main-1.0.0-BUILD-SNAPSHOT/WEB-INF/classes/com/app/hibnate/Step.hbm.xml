@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 19, 2016 3:57:53 PM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="com.app.hibnate.Step" table="step" catalog="mywyc" optimistic-lock="version">
+        <id name="stepId" type="java.lang.Integer">
+            <column name="StepId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="item" class="com.app.hibnate.Item" fetch="select">
+            <column name="ItemId" not-null="true" />
+        </many-to-one>
+        <property name="stepNumber" type="java.lang.Integer">
+            <column name="StepNumber" />
+        </property>
+        <property name="stepText" type="string">
+            <column name="StepText" />
+        </property>
+        <property name="stepImageName" type="string">
+            <column name="StepImageName" />
+        </property>
+        <property name="stepImageFiletye" type="string">
+            <column name="StepImageFiletye" />
+        </property>
+        <property name="stepData" type="binary">
+            <column name="StepData" />
+        </property>
+    </class>
+</hibernate-mapping>
